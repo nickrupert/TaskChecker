@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Nick Rupert's JSON Functions</title>	
+        	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="RupertExampleCode.js"></script>
+		<script id="task" type="application/json" src="task-3.json"></script>
+
+    </head>
+    <body>
+        <h1> Task Checker</h1>
+
+        <form id="frm1" action="" method="POST">
+          Input Date: <input type="text" id="inputDate" name="inputDate" value="2016-10-07T05:00:52Z"><br>
+          <input name="frm1Button" type="button" value="Submit" onclick="$.Parser.currentOpenAndClosed('task-3.json', document.getElementById('inputDate').value)">
+        </form> 
+        <div id="numOpen">Number of Open Tasks on Input Date: </div>
+        <div id="numClosed">Number of Closed Tasks on Input Date: </div></br>
+
+        <form id="frm2" action="" method="POST">
+          End Date: <input type="text" id="endDate" name="endDate" value="2016-11-24T05:00:52Z"><br>
+          <input name="frm2Button" type="button" value="Submit" onclick="$.Parser.openedClosedWithinRange('task-3.json', document.getElementById('inputDate').value, document.getElementById('endDate').value)">
+        </form> 
+        <div id="numOpenInRange">Number of Tasks Open Between Input Date and End Date: </div></br>
+
+        <form id="frm3" action="" method="POST">
+          Instance ID for Most Recent: <input type="text" id="InstanceID" name="InstanceID" value="489"><br>
+          <input name="frm3Button" type="button" value="Submit" onclick="$.Parser.mostRecentTask('task-3.json', document.getElementById('InstanceID').value)">
+        </form> 
+        <div id="mostRecent">Most Recent task for input Instance ID: </div></br>
+
+        <form id="frm4" action="" method="POST">
+          Instance ID for Count: <input type="text" id="InstanceIDCount" name="InstanceIDCount" value="483"><br>
+          <input name="frm4Button" type="button" value="Submit" onclick="$.Parser.tasksCount('task-3.json', document.getElementById('InstanceIDCount').value)">
+        </form> 
+        <div id="CountOfTasks">Number of Tasks associated with the Instance ID: </div></br>
+
+        <form id="frm5" action="" method="POST">
+          Input Assignee: <input type="text" id="assignee" name="assignee" value="Impact 2014"><br>
+          <input name="frm5Button" type="button" value="Submit" onclick="$.Parser.assigneeOpenAndClosed('task-3.json', document.getElementById('assignee').value)">
+        </form> 
+        <div id="OpenforAssignee">Number of Tasks open for Input Assignee: </div>
+        <div id="ClosedforAssignee">Number of Tasks closed for Input Assingee: </div></br>
+
+    </body>
+</html>
